@@ -1,8 +1,8 @@
 import java.util.Scanner;
 public class Stack{
-	int stackSize=10; //the size of the stack, can be changed anytime, no hardcoded functions that are only prepared for 10(default stack size)
-	int[] stack=new int[stackSize]; //the stack
-	int top=0; 
+	static int stackSize=10; //the size of the stack, can be changed anytime, no hardcoded functions that are only prepared for 10(default stack size)
+	static int[] stack=new int[stackSize]; //the stack
+	static int top=0; 
 	static void push(int value){
 	 if(isFull()){  //displays a message saying there's a stack overflow when stack is full
 		 System.out.println("Stack overflow."); 
@@ -13,11 +13,16 @@ public class Stack{
 		 System.out.println("Value number "+ top+ " added successfully");
 	 }
 	}
-	boolean isFull(){
+	static boolean isFull(){
 		return top>=stackSize-1; //max real length of this stack is 9 in integers, so if top is bigger or equal to stackSize-1(real), it returns true, if not, false
 	}
 	static void pop(){ //decreases stack virtual length by 1
-		top<=0 ? System.out.println("Stack has no values.") : top--; //this statement only decreases top if it's bigger than 0, if not, it displays a message that says that the stack has no values
+		if(top<=0){
+                 System.out.println("Stack has no values.");
+			} 
+		else{
+			top--;
+		}
 	}
 	static void moveByOneRight(int start){ //function used by endToStart() to push all the values to right by 1
 	  int end=top-1; //this is where virtual length is used if you were wondering, the function wont access the values after top
@@ -34,7 +39,7 @@ public class Stack{
 		stack[1]=saveFirst;
 	   }
 	}
-	static moveByOneLeft(int start){ //the function used to push values to left by startToEnd()
+	static void moveByOneLeft(int start){ //the function used to push values to left by startToEnd()
 		int end=1;
 		while(end!=start+1){
 			stack[end-1]=stack[end];
@@ -70,17 +75,36 @@ public class Stack{
 	public static void main (String[] args) {
 		//TODO: Implement driver
 		Scanner input=new Scanner(System.in);
-		System.out.println("1.Enter 1 to insert value.\nEnter 2 to pop.\nEnter 3 to use the startToEnd function.\nEnter 4 to use the endToStart function.\nEnter 5 to display the stack.");
+		System.out.println("1.Enter 1 to insert value.\nEnter 2 to pop.\nEnter 3 to use the startToEnd function.\nEnter 4 to use the endToStart function.\nEnter 5 to display the stack.\nEnter 0 to exit.");
 		int choice=input.nextInt();
 		int intin=0;
-		if(choice>0&choice<6){
+		if(choice>=0&choice<6){
 			while(true){
+			System.out.println("\n\n");
 			switch(choice){
+				case 0:
+				System.exit(0);
 				case 1:
-					
+				intin=input.nextInt();
+				push(intin);
+				break;
+				case 2:
+				pop();
+				break;
+				case 3:
+				startToEnd();
+				break;
+				case 4:
+				endToStart();
+				break;
+				case 5:
+				displayStack();
 			  }
+			  choice=input.nextInt();
 			}
+		}
+		else{
+		 System.out.println("Invalid input.");
 		}
 	}
 }
-

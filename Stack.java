@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 public class Stack{
 	int stackSize=10; //the size of the stack, can be changed anytime, no hardcoded functions that are only prepared for 10(default stack size)
 	int[] stack=new int[stackSize]; //the stack
@@ -61,7 +61,7 @@ public class Stack{
 		}
 	}
 	//SOME TRICKS I USED TO VISUALIZE THE STACK:
-	// ALWAYS PREPARE FOR THE WORST CASE, THE OTHERS WILL TAKE CARE OF THEMSELVES T
+	// ALWAYS PREPARE FOR THE WORST CASE, THE OTHERS WILL TAKE CARE OF THEMSELVES 
 	//THINK WHAT WILL HAPPEN IF THE STACK ONLY HAS 2 VALUES 
 	//I ALSO USED BLENDER TO DRAW THE STACK AND DRAW THE STEPS OF THE PUSHING LEFT/RIGHT FUNCTIONS.
 	// THE MOVING ALGO EXPLAINED HERE:
@@ -69,6 +69,18 @@ public class Stack{
     //DON'T WORRY ABOUT VALUES AFTER TOP-1 IF YOU LOOKED AT THE POP FUNCTION, THE BEAUTIFUL THING IS THAT THE FUTURE VALUES WILL REPLACE THEM IF THE ADD FUNCTION IS USED.   
 	public static void main (String[] args) {
 		//TODO: Implement driver
+		Scanner input=new Scanner(System.in);
+		System.out.println("1.Enter 1 to insert value.\nEnter 2 to pop.\nEnter 3 to use the startToEnd function.\nEnter 4 to use the endToStart function.\nEnter 5 to display the stack.");
+		int choice=input.nextInt();
+		int intin=0;
+		if(choice>0&choice<6){
+			while(true){
+			switch(choice){
+				case 1:
+					
+			  }
+			}
+		}
 	}
 }
 

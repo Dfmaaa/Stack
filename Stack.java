@@ -45,7 +45,7 @@ public class Stack{
 		return top==0; //if top is zero, it will return true, if not, false
 	}
 	static void makeEmpty(){
-	  top==0; // assigns the default value	
+	  top=0; // assigns the default value	
     }
 	static void startToEnd(){ //this function moves the first value to the end value and then kind of pushes all the values to the left by 1
 		if(top>1){

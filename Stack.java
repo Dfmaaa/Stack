@@ -75,7 +75,7 @@ public class Stack{
 	public static void main (String[] args) {
 		//TODO: Implement driver
 		Scanner input=new Scanner(System.in);
-		System.out.println("1.Enter 1 to insert value.\nEnter 2 to pop.\nEnter 3 to use the startToEnd function.\nEnter 4 to use the endToStart function.\nEnter 5 to display the stack.\nEnter 0 to exit.");
+		System.out.println("Enter 1 to insert value.\nEnter 2 to pop.\nEnter 3 to use the startToEnd function.\nEnter 4 to use the endToStart function.\nEnter 5 to display the stack.\nEnter 0 to exit.");
 		int choice=input.nextInt();
 		int intin=0;
 		if(choice>=0&choice<6){
